@@ -197,16 +197,12 @@ class _AddNotePageState extends State<AddNotePage> {
           ],
         ),
       ),
-      // 右下角的儲存按鈕
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // 如果標題或內容是空的，也可以選擇不存，這裡直接存
           String title = _titleController.text;
           String content = _contentController.text;
 
           if (title.isEmpty) title = "No Title"; // 預設標題
-
-          // 回傳一個新的 Note 物件給上一頁
           Navigator.pop(context, Note(title: title, content: content));
         },
         backgroundColor: const Color(0xFFD1C4E9), // 淺紫色
